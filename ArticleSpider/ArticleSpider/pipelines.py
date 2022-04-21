@@ -42,7 +42,10 @@ class MysqlTwistedPipeline(object):
         cursor.execute(insert_sql, params)
 
     def handle_error(self, failure, item, spider):
+        print("MySQL pipeline: error")
         print(failure)
+        print(item)
+        print(spider)
 
 
 class JsonWithEncodingPipeline(object):
