@@ -73,5 +73,37 @@ class CnblogsArticleItem(scrapy.Item):
         params.append(self.get('create_time', '1970-07-01')[0])
         return insert_sql, params
 
-class ZhihuArticleItem(scrapy.Item):
-    front_image_url = scrapy.Field()
+
+class ZhihuQuestionItem(scrapy.Item):
+    zhihu_id = scrapy.Field()
+    topics = scrapy.Field()
+    url = scrapy.Field()
+    title = scrapy.Field()
+    content = scrapy.Field()
+    create_time = scrapy.Field()
+    update_time = scrapy.Field()
+    answers = scrapy.Field()
+    comments = scrapy.Field()
+    total_view = scrapy.Field()
+    clicks = scrapy.Field()
+
+
+class ZhihuAnswerItem(scrapy.Item):
+    question_id = scrapy.Field()
+    content = scrapy.Field()
+
+    # zhihu_id = scrapy.Field()
+    # url = scrapy.Field()
+    # question_id = scrapy.Field()
+    # author_id = scrapy.Field()
+    # content = scrapy.Field()
+    # likes = scrapy.Field()
+    # comments = scrapy.Field()
+    # create_time = scrapy.Field()
+    # update_time = scrapy.Field()
+
+    def get_insert_sql(self):
+        insert_sql = 'INSERT INTO zhihu_answer (question_id, content) VALUES (%s, %s)'
+        params = list()
+        params.append(self.get("question_id", "")[0])
+        params.append(self.get("content", "").join(" "))

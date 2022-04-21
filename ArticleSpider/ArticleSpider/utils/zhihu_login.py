@@ -178,9 +178,10 @@ class Login(object):
     def login(self, use_baidu=False):
 
         self.browser.get(self.url)
+        time.sleep(5)
         # click '密码登录'
         login_element = self.browser.find_element_by_css_selector(
-            '#root > div > main > div > div > div > div.SignContainer-content > div > div:nth-child(1) > form > div.SignFlow-tabs > div:nth-child(2)')
+            'div.SignFlow-tab:nth-child(2)')
         self.browser.execute_script("arguments[0].click();", login_element)
 
         # input username
