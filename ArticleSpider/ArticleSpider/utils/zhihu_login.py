@@ -23,7 +23,7 @@ class Operation():
         :param slider_ele: slide puzzle element
         :param background_ele: background element
         :param count: retry times
-        :param save_image:  do save captchas verified
+        :param save_image: do save captchas verified
         '''
 
         self.count = count

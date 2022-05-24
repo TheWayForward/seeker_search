@@ -1,14 +1,9 @@
-# Define here the models for your spider middleware
-#
-# See documentation in:
-# https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-
+import time
 from scrapy import signals
+from scrapy.http import HtmlResponse
+from scrapy.selector import Selector
 from fake_useragent import UserAgent
-
-# useful for handling different item types with a single interface
-from itemadapter import is_item, ItemAdapter
-
+from ArticleSpider.utils.crawl_ip import GetIP
 
 class ArticlespiderSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -114,7 +109,22 @@ class RandomUserAgentMiddleware(object):
     def from_crawler(cls, crawler):
         return cls(crawler)
 
+    def get_ua(self):
+        return getattr(self.ua, self.ua_type)
+
+class RandomProxyMiddleWare(object):
+    # randomly change ip
     def process_request(self, request, spider):
-        def get_ua():
-            return getattr(self.ua, self.ua_type)
-        request.headers.setdefault('User-Agent', get_ua())
+        get_ip = GetIP()
+        request.meta["proxy"] = get_ip.get_random_ip()
+
+class JSPageMiddleWare(object):
+
+    def process_request(self, request, spider):
+        # spiders' name editable
+        if spider.name == "lagou":
+            spider.browser.get(request.url)
+            time.sleep(3)
+            print("JSPageMiddleWare visiting: {0}".format(request.url))
+            callback = request.callback
+            return HtmlResponse(url=spider.browser.current_url, body=spider.browser.page_source, encoding="utf-8", request=request)

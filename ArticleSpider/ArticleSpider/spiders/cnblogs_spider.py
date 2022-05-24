@@ -1,8 +1,10 @@
 from scrapy import selector
 from scrapy import Request
 from scrapy.loader import ItemLoader
+from pydispatch import dispatcher
+from scrapy import signals
 from urllib import parse
-import undetected_chromedriver
+import undetected_chromedriver as uc
 import time
 import scrapy
 import json
@@ -24,16 +26,17 @@ class CnblogsSpider(scrapy.Spider):
         "COOKIES_ENABLED": True
     }
 
-    # import undetected_chromedriver.v2 as uc
-    # browser = uc.Chrome(use_subprocess=True)
-    # browser.get("https://account.cnblogs.com/signin")
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.browser = uc.Chrome(use_subprocess=True)
+        # onClose cycle function
+        dispatcher.connect(self.spider_closed, signals.spider_closed)
 
     def start_requests(self):
         cookies = []
         if os.path.exists(BASE_DIR + '/cookies/cnblogs.cookie'):
             cookies = pickle.load(open(BASE_DIR + '/cookies/cnblogs.cookie', 'rb'))
         if not cookies:
-            import undetected_chromedriver.v2 as uc
             browser = uc.Chrome(use_subprocess=True)
             browser.get("https://account.cnblogs.com/signin")
             browser.find_element_by_css_selector('#mat-input-0').send_keys("951947409@qq.com")
@@ -103,3 +106,7 @@ class CnblogsSpider(scrapy.Spider):
 
         article_item = item_loader.load_item()
         yield article_item
+
+    def spider_closed(self):
+        print("zhihu spider closed")
+        self.browser.close()

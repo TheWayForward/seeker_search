@@ -30,6 +30,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 class ZhihuSpider(scrapy.Spider):
     name = 'zhihu_spider'
     allowed_domains = ['www.zhihu.com']
+    custom_settings = {
+        "COOKIES_ENABLED": True
+    }
     headers = {
         "HOST": "www.zhihu.com",
         "Referer": "https://www.zhizhu.com",
@@ -203,3 +206,7 @@ class ZhihuSpider(scrapy.Spider):
     #     if not is_end:
     #         yield scrapy.Request(next_url, headers=self.headers, callback=self.parse_answer)
     #     return
+
+    def spider_closed(self, spider):
+        print("spider closed")
+        self.browser.quit()
