@@ -1,6 +1,5 @@
 import codecs
 import json
-import MySQLdb
 from scrapy.pipelines.images import ImagesPipeline
 from scrapy.exporters import JsonItemExporter
 from twisted.enterprise import adbapi
@@ -19,7 +18,7 @@ class MysqlTwistedPipeline(object):
 
     @classmethod
     def from_settings(cls, settings):
-        from MySQLdb.cursors import DictCursor
+        from pymysql.cursors import DictCursor
         dbparms = dict(
             host=settings["MYSQL_HOST"],
             db=settings["MYSQL_DBNAME"],
@@ -86,4 +85,10 @@ class ArticleImagePipeline(ImagesPipeline):
                 # value: filename, etc.
                 image_file_path = value['path']
             item['front_image_path'] = image_file_path
+        return item
+
+class ElasticSearchPipeline(object):
+
+    def process_item(self, item, spider):
+        item.save_to_es()
         return item

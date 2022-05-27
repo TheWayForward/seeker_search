@@ -1,6 +1,6 @@
 import requests
 from scrapy.selector import Selector
-import MySQLdb
+import pymysql as MySQLdb
 
 conn = MySQLdb.connect(host="127.0.0.1", user="root", passwd="", db="scrapy_spider", charset="utf8")
 cursor = conn.cursor()

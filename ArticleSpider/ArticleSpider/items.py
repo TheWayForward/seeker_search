@@ -5,6 +5,10 @@ from ArticleSpider.utils.common import extract_num
 import scrapy
 from scrapy.loader import ItemLoader
 from itemloaders.processors import Join, MapCompose, TakeFirst, Identity
+from ArticleSpider.models.elasticsearch_types import ZhihuType
+from elasticsearch_dsl.connections import connections
+
+es = connections.create_connection(ZhihuType._doc_type.using)
 
 
 class ArticlespiderItem(scrapy.Item):
@@ -39,6 +43,21 @@ def remove_comment_tags(value):
 def return_value(value):
     return value
 
+
+def generate_suggests(index, info_tuple):
+    used_words = set()
+    suggests = []
+    for text, weight in info_tuple:
+        if text:
+            words = es.indices.analyze(index=index, analyzer="ik_max_word", params={"filter": ["lowercase"]}, body=text)
+            print(words)
+            analyzed_words = set([r["token"] for r in words["tokens"] if len(r["token"]) > 1])
+            new_words = analyzed_words - used_words
+        else:
+            new_words = set()
+    if new_words:
+        suggests.append({"input": list(new_words), "weight": weight})
+    return suggests
 
 class ArticleItemLoader(ItemLoader):
     default_output_processor = TakeFirst()
@@ -89,26 +108,36 @@ class ZhihuQuestionItem(scrapy.Item):
     clicks = scrapy.Field()
 
     def get_insert_sql(self):
-        insert_sql = "insert into zhihu_question(zhihu_id, topics, url, title, content, answers, comments, total_view, clicks) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE content = VALUES(content), answers = VALUES(answers), comments = VALUES(comments), total_view = VALUES(total_view), clicks = VALUES(clicks)"
-        zhihu_id = self["zhihu_id"][0]
-        topics = ",".join(self["topics"])
-        url = self["url"][0]
-        title = "".join(self["title"])
-        content = "".join(self["content"])
-        answers = extract_num("".join(self["answers"]))
-        comments = extract_num("".join(self["comments"]))
-
-        if len(self["total_view"]) == 2:
-            total_view = int(self["total_view"][0].replace(",", ""))
-            clicks = int(self["total_view"][1].replace(",", ""))
-        else:
-            total_view = int(self["total_view"][0].replace(",", ""))
-            clicks = 0
+        insert_sql = "insert into zhihu_question(zhihu_id, topics, url, title, content, answers, comments, total_view) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE content = VALUES(content), answers = VALUES(answers), comments = VALUES(comments), total_view = VALUES(total_view)"
+        zhihu_id = self["zhihu_id"]
+        topics = self["topics"]
+        url = self["url"]
+        title = self["title"]
+        content = self["content"]
+        answers = self["answers"]
+        comments = self["comments"]
+        total_view = self["total_view"]
 
         params = (zhihu_id, topics, url, title, content, answers, comments,
-                  total_view, clicks)
+                  total_view)
 
         return insert_sql, params
+
+    def save_to_es(self):
+        zhihu = ZhihuType()
+        zhihu.zhihu_id = self.get("zhihu_id", "")
+        zhihu.topics = self.get("topics", "")
+        zhihu.url = self.get("url", "")
+        zhihu.title = self.get("title", "")
+        zhihu.content = self.get("content", "")
+        zhihu.create_time = self.get("create_time", "")
+        zhihu.update_time = self.get("update_time", "")
+        zhihu.answers = self.get("answers", "")
+        zhihu.comments = self.get("comments", "")
+        zhihu.total_view = self.get("total_view", "")
+        zhihu.suggest = generate_suggests(ZhihuType._doc_type.index, ((zhihu.title, 10), (zhihu.topics, 7)))
+        zhihu.save()
+        return
 
 
 class ZhihuAnswerItem(scrapy.Item):

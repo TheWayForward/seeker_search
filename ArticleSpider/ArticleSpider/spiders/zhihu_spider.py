@@ -22,7 +22,6 @@ from urllib import parse
 
 from ArticleSpider.utils import zhihu_login
 from ArticleSpider.utils import common
-from ArticleSpider.utils import encrypt_helper as EncryptHelper
 
 BASE_DIR = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
@@ -124,15 +123,30 @@ class ZhihuSpider(scrapy.Spider):
         item_loader_question.add_css("total_view",
                             "div.NumberBoard-item > div.NumberBoard-itemInner > strong.NumberBoard-itemValue::text")
         item_loader_question.add_css("topics", ".QuestionHeader-topics .Popover div::text")
+
         question_item = item_loader_question.load_item()
 
-        item_loader_answer = ItemLoader(item=ZhihuAnswerItem(), response=response)
-        item_loader_answer.add_value("question_id", question_id)
-        item_loader_answer.add_css("content", "#QuestionAnswers-answers > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div > div > div.RichContent.RichContent--unescapable > div.RichContent-inner > span > p::text")
-        answer_item = item_loader_answer.load_item()
+        print(question_item)
+
+        question_item["answers"] = common.extract_num_from_separator(question_item["answers"][0])
+        question_item["comments"] = common.zhihu_extract_num_from_comment(question_item["comments"][0])
+        question_item["total_view"] = common.extract_num_from_separator(question_item["total_view"][0])
+        question_item["url"] = question_item["url"][0]
+        question_item["zhihu_id"] = question_item["zhihu_id"][0]
+        if question_item["content"]:
+            question_item["content"] = " ".join(question_item["content"]) + " "
+        question_item["title"] = question_item["title"][0]
+        question_item["topics"] = ",".join(question_item["topics"])
 
         yield question_item
-        yield answer_item
+
+        # item_loader_answer = ItemLoader(item=ZhihuAnswerItem(), response=response)
+        # item_loader_answer.add_value("question_id", question_id)
+        # item_loader_answer.add_css("content", "#QuestionAnswers-answers > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div > div > div.RichContent.RichContent--unescapable > div.RichContent-inner > span > p::text")
+        #
+        # answer_item = item_loader_answer.load_item()
+        #
+        # yield answer_item
 
         # u()(f()(d))
 
