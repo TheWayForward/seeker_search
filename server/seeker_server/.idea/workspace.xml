@@ -1,66 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3858dbf3-2f13-45ad-902b-6d24e48fb898" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/models/elasticsearch_types.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/ArticleSpider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/.idea/ArticleSpider.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/dictionaries/FuDongYuan.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/other.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/helloworld.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/spiders/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/spiders/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/spiders/cnblogs_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/spiders/cnblogs_spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/spiders/lagou_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/spiders/lagou_spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/spiders/zhihu_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/spiders/zhihu_spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/utils/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/utils/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/utils/crawl_ip.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/utils/crawl_ip.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/utils/encrypt_helper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/utils/g_encrypt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/article.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/article_export.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/package.json" beforeDir="false" />
+    <list default="true" id="d681d6ed-641c-42ff-aff6-01eb43420cab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/seeker_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/seeker_server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeker_server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/seeker_server/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeker_server/.idea/seeker_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/seeker_server/.idea/seeker_server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeker_server/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeker_server/seeker_server/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeker_server/seeker_server/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeker_server/seeker_server/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeker_server/seeker_server/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeker_server/seeker_server/wsgi.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="29kjpIEZ7JRu7TRkGpKwqR4AdNA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="29lmeVkRzIj4gIugSR4xuVK3F8p" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\FuDongYuan\Desktop\Box\learning\seeker_search\server\seeker_server" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django Server.seeker_server">
+    <configuration name="versatile_helper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="seeker_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/versatile_helper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="seeker_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/search" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/search/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="seeker_server" type="Python.DjangoServer" factoryName="Django server">
+      <module name="seeker_server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="seeker_server.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.versatile_helper" />
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3858dbf3-2f13-45ad-902b-6d24e48fb898" name="Default Changelist" comment="" />
-      <created>1653664158548</created>
+      <changelist id="d681d6ed-641c-42ff-aff6-01eb43420cab" name="Default Changelist" comment="" />
+      <created>1653696141487</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1653664158548</updated>
-      <workItem from="1653664164175" duration="211000" />
+      <updated>1653696141487</updated>
+      <workItem from="1653696220049" duration="9485000" />
+      <workItem from="1653784748045" duration="8240000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1431" height="139" key="GridCell.Tab.0.bottom" timestamp="1653813203926">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="139" key="GridCell.Tab.0.bottom/0.0.1474.864@0.0.1474.864" timestamp="1653813203926" />
+    <state width="1431" height="139" key="GridCell.Tab.0.center" timestamp="1653813203926">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="139" key="GridCell.Tab.0.center/0.0.1474.864@0.0.1474.864" timestamp="1653813203926" />
+    <state width="1431" height="139" key="GridCell.Tab.0.left" timestamp="1653813203926">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="139" key="GridCell.Tab.0.left/0.0.1474.864@0.0.1474.864" timestamp="1653813203926" />
+    <state width="1431" height="139" key="GridCell.Tab.0.right" timestamp="1653813203926">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="139" key="GridCell.Tab.0.right/0.0.1474.864@0.0.1474.864" timestamp="1653813203926" />
+    <state x="246" y="77" key="SettingsEditor" timestamp="1653696361419">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state x="246" y="77" key="SettingsEditor/0.0.1474.864@0.0.1474.864" timestamp="1653696361419" />
+    <state x="847" y="185" width="672" height="678" key="search.everywhere.popup" timestamp="1653795295811">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state x="847" y="185" width="672" height="678" key="search.everywhere.popup/0.0.1474.864@0.0.1474.864" timestamp="1653795295811" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/seeker_server$versatile_helper.coverage" NAME="versatile_helper Coverage Results" MODIFIED="1653785450667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/seeker_server$views.coverage" NAME="views Coverage Results" MODIFIED="1653699801744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/search" />
   </component>
 </project>
