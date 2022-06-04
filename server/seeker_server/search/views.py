@@ -12,7 +12,7 @@ import json
 client = Elasticsearch(hosts=["127.0.0.1"])
 
 
-class ZhihuSearchSuggest(View):
+class SearchSuggest(View):
     def get(self, request):
         key_words = request.GET.get("key_words", "")
         suggest_data = []
@@ -21,7 +21,7 @@ class ZhihuSearchSuggest(View):
             s = s.suggest("my-suggest", key_words, completion={
                 "field": "suggest",
                 "fuzzy": {
-                    "fuzziness": 2,
+                    "fuzziness": 10,
                 },
                 "size": 10
             })
@@ -39,7 +39,7 @@ class ZhihuSearchSuggest(View):
         })
 
 
-class ZhihuSearchResult(View):
+class SearchResult(View):
     def get(self, request):
         key_words = request.GET.get("key_words", "")
         page_index = request.GET.get("page_index", "1")

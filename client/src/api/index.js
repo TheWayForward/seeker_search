@@ -16,7 +16,7 @@ export const login = (username, password) => ajax({
 });
 
 export const getSuggestion = (key_words) => ajax({
-    url: `${BASE_URL}/zhihu_suggest`,
+    url: `${BASE_URL}/suggest`,
     params: {
         key_words: key_words
     },
@@ -24,7 +24,7 @@ export const getSuggestion = (key_words) => ajax({
 });
 
 export const getSearchResult = (key_words, page_index) => ajax({
-    url: `${BASE_URL}/zhihu_search_result`,
+    url: `${BASE_URL}/search_result`,
     params: {
         key_words: key_words,
         page_index: page_index

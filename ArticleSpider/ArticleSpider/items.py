@@ -118,8 +118,7 @@ class ZhihuQuestionItem(scrapy.Item):
         comments = self["comments"]
         total_view = self["total_view"]
 
-        params = (zhihu_id, topics, url, title, content, answers, comments,
-                  total_view)
+        params = (zhihu_id, topics, url, title, content, answers, comments, total_view)
 
         return insert_sql, params
 

@@ -28,7 +28,7 @@ class MysqlTwistedPipeline(object):
             cursorclass=DictCursor,
             use_unicode=True,
         )
-        dbpool = adbapi.ConnectionPool("MySQLdb", **dbparms)
+        dbpool = adbapi.ConnectionPool("pymysql", **dbparms)
         return cls(dbpool)
 
     def process_item(self, item, spider):

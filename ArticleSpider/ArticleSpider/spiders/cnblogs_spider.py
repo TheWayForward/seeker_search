@@ -43,7 +43,7 @@ class CnblogsSpider(scrapy.Spider):
             browser.find_element_by_css_selector('#mat-input-1').send_keys("Sam_2019")
             browser.find_element_by_css_selector(
                 'body > app-root > app-sign-in-layout > div > div > app-sign-in > app-content-container > div > div > div > form > div > button').click()
-            time.sleep(1)
+            time.sleep(30)
             cookies = browser.get_cookies()
             pickle.dump(cookies, open(BASE_DIR + '/cookies/cnblogs.cookie', 'wb'))
         cookie_dict = {}
@@ -105,8 +105,9 @@ class CnblogsSpider(scrapy.Spider):
         item_loader.add_value("url_object_id", common.get_md5(response.meta.get("url", "")))
 
         article_item = item_loader.load_item()
+        print(article_item)
         yield article_item
 
     def spider_closed(self):
-        print("zhihu spider closed")
+        print("cnblogs spider closed")
         self.browser.close()

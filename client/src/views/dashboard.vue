@@ -136,7 +136,7 @@
                 if (this.searchResult.key_words === "" && this.searchInput === "") {
                     this.emptyHint = "键入以搜索";
                 } else if (this.searchResult.key_words !== "" && !this.searchResult.total_result) {
-                    this.emptyHint = "暂无数据"
+                    this.emptyHint = "暂无数据";
                 }
             }
         },
@@ -166,6 +166,7 @@
                 }
                 let result = await getSearchResult(this.searchInput, this.searchResult.page_index);
                 if (result.code === 200) {
+                    console.log(result);
                     let data = result.info;
                     this.searchResult.duration = data.duration;
                     this.searchResult.key_words = data.key_words;
@@ -202,7 +203,6 @@
             },
 
             getSearchHistoryFromLocalStorage() {
-                console.log(JSON.parse(localStorage.getItem("search_history")));
                 return JSON.parse(localStorage.getItem("search_history"));
             },
 

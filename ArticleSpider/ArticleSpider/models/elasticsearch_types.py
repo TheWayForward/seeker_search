@@ -16,8 +16,8 @@ ik_analyzer = CustomAnalyzer("ik_max_word", filter=["lowercase"])
 
 class ZhihuType(DocType):
     suggest = Completion(analyzer=ik_analyzer)
-    zhihu_id = Integer()
     topics = Text(analyzer="ik_max_word")
+    zhihu_id = Integer()
     url = Keyword()
     title = Text(analyzer="ik_max_word")
     content = Text(analyzer="ik_max_word")

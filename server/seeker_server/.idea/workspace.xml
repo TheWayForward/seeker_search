@@ -3,21 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="d681d6ed-641c-42ff-aff6-01eb43420cab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../ArticleSpider/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/seeker_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/seeker_server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/cookies/cnblogs.cookie" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/cookies/zhihu.cookie" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/models/elasticsearch_types.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/models/elasticsearch_types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/spiders/cnblogs_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArticleSpider/ArticleSpider/spiders/cnblogs_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/src/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/src/views/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/src/views/dashboard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeker_server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/seeker_server/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeker_server/.idea/seeker_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/seeker_server/.idea/seeker_server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeker_server/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeker_server/seeker_server/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeker_server/seeker_server/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeker_server/seeker_server/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeker_server/seeker_server/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeker_server/seeker_server/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/search/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeker_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seeker_server/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,7 +52,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -143,6 +147,8 @@
       <updated>1653696141487</updated>
       <workItem from="1653696220049" duration="9485000" />
       <workItem from="1653784748045" duration="8240000" />
+      <workItem from="1654256386280" duration="822000" />
+      <workItem from="1654305289296" duration="5527000" />
     </task>
     <servers />
   </component>
@@ -153,26 +159,31 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1431" height="139" key="GridCell.Tab.0.bottom" timestamp="1653813203926">
-      <screen x="0" y="0" width="1474" height="864" />
+    <state width="1814" height="227" key="GridCell.Tab.0.bottom" timestamp="1654305535315">
+      <screen x="0" y="0" width="1857" height="1080" />
     </state>
     <state width="1431" height="139" key="GridCell.Tab.0.bottom/0.0.1474.864@0.0.1474.864" timestamp="1653813203926" />
-    <state width="1431" height="139" key="GridCell.Tab.0.center" timestamp="1653813203926">
-      <screen x="0" y="0" width="1474" height="864" />
+    <state width="1814" height="227" key="GridCell.Tab.0.bottom/0.0.1857.1080@0.0.1857.1080" timestamp="1654305535315" />
+    <state width="1814" height="227" key="GridCell.Tab.0.center" timestamp="1654305535315">
+      <screen x="0" y="0" width="1857" height="1080" />
     </state>
     <state width="1431" height="139" key="GridCell.Tab.0.center/0.0.1474.864@0.0.1474.864" timestamp="1653813203926" />
-    <state width="1431" height="139" key="GridCell.Tab.0.left" timestamp="1653813203926">
-      <screen x="0" y="0" width="1474" height="864" />
+    <state width="1814" height="227" key="GridCell.Tab.0.center/0.0.1857.1080@0.0.1857.1080" timestamp="1654305535315" />
+    <state width="1814" height="227" key="GridCell.Tab.0.left" timestamp="1654305535315">
+      <screen x="0" y="0" width="1857" height="1080" />
     </state>
     <state width="1431" height="139" key="GridCell.Tab.0.left/0.0.1474.864@0.0.1474.864" timestamp="1653813203926" />
-    <state width="1431" height="139" key="GridCell.Tab.0.right" timestamp="1653813203926">
-      <screen x="0" y="0" width="1474" height="864" />
+    <state width="1814" height="227" key="GridCell.Tab.0.left/0.0.1857.1080@0.0.1857.1080" timestamp="1654305535315" />
+    <state width="1814" height="227" key="GridCell.Tab.0.right" timestamp="1654305535315">
+      <screen x="0" y="0" width="1857" height="1080" />
     </state>
     <state width="1431" height="139" key="GridCell.Tab.0.right/0.0.1474.864@0.0.1474.864" timestamp="1653813203926" />
-    <state x="246" y="77" key="SettingsEditor" timestamp="1653696361419">
-      <screen x="0" y="0" width="1474" height="864" />
+    <state width="1814" height="227" key="GridCell.Tab.0.right/0.0.1857.1080@0.0.1857.1080" timestamp="1654305535315" />
+    <state x="310" y="96" key="SettingsEditor" timestamp="1654305302173">
+      <screen x="0" y="0" width="1857" height="1080" />
     </state>
     <state x="246" y="77" key="SettingsEditor/0.0.1474.864@0.0.1474.864" timestamp="1653696361419" />
+    <state x="310" y="96" key="SettingsEditor/0.0.1857.1080@0.0.1857.1080" timestamp="1654305302173" />
     <state x="847" y="185" width="672" height="678" key="search.everywhere.popup" timestamp="1653795295811">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
