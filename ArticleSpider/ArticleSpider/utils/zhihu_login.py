@@ -152,8 +152,6 @@ class Operation():
             os.remove(background01)
             os.remove(background)
             os.remove(slider)
-            # print('删除')
-            # os.remove(slider)
         return left
 
     def image_crop(self, image, loc):
